@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content%}
+<h1>{{Game}}</h1>
+<ul>
+<a href= {% url 'Home' %}>Home</a>
+{% for des, x in fav.items %}
+{% if des == Game%}
+<p>{{ x.description }}</p>
+{% for player in x.players %}
+<li><b>{{ player }}<b></li>
+{% endfor %}
+{% endif%}
+</ul>
+{% endfor %}{% endblock content %}
